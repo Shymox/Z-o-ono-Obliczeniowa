@@ -163,7 +163,87 @@ void BST::push(int value)
 
 void BST::pop(TreeElem* node)
 {	
-	
+ 	if (node != nullptr)
+	{
+		if (node->left == nullptr && node->right == nullptr)
+		{
+			if (node == root)
+			{	
+				this->root = nullptr;
+			}
+			else
+			{
+				if (node == node->parent->left)
+				{
+					node->parent->left = nullptr;
+				}
+				else
+				{
+					node->parent->right = nullptr;
+				}
+			}
+		}
+		else
+		{
+				if (node->right == nullptr)
+				{
+					if (node != this->root)
+					{
+						node->left->parent = node->parent;
+						if (node->parent->left == node)
+						{
+							node->parent->left = node->left;
+						}
+						else
+						{
+							node->parent->right = node->left;
+						}
+					}
+					else
+					{
+						this->root = this->root->left;
+						this->root->parent = nullptr;
+					}
+				}
+				else
+				{
+					TreeElem* temp = node;
+					node = node->right;
+					TreeElem* tmp = node;
+					while (tmp != nullptr)
+					{
+						node = tmp;
+						tmp = tmp->left;
+					}
+					temp->value = node->value;
+					
+					if (node->right != nullptr)
+					{
+						node->right->parent = node->parent;
+						if (temp->right == node)
+						{
+							node->parent->right = node->right;
+						}
+						else
+						{
+							node->parent->left = node->right;
+						}
+					}
+					else
+					{
+						if (temp->right == node)
+						{
+							temp->right = nullptr;
+						}
+						else
+						{
+							node->parent->left = nullptr;
+						}
+					}
+				}
+		}
+		delete node;
+	}
 }
 
 bool BST::search(int number)
@@ -190,15 +270,17 @@ bool BST::search(int number)
 
 void BST::erase()
 {
-	
-	
+	while (this->root!=nullptr)
+	{
+		pop(this->root);
+	}
 }
 
 void BST::display(std::string sp, std::string sn, TreeElem* node)
 {
 
 	std::string s;
-		if (node)
+		if (node !=nullptr)
 		{
 			s = sp;
 			if (sn == cr) s[s.length() - 2] = ' ';
@@ -226,7 +308,7 @@ TreeElem* BST::findNode(int value)
 	{
 		if (temp->value == value)
 		{
-			break;
+			return temp;
 		}
 		if (value < temp->value)
 		{
@@ -236,7 +318,6 @@ TreeElem* BST::findNode(int value)
 		{
 			temp = temp->right;
 		}
-
 	}
 	return temp;
 }

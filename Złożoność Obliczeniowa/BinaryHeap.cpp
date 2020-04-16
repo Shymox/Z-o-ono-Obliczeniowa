@@ -152,7 +152,7 @@ bool BinaryHeap::search(int number)
 	}
 	return false;
 }
-//wyswuetlanie kopca
+//wyswietlanie kopca
 void BinaryHeap::display(std::string sp, std::string sn, size_t v)
 {
 		std::string s;
