@@ -252,11 +252,14 @@ void List::popNumber(int number)
 //wyszukiwanie wartosæi, jeœli znaleziono zwraca true
 bool List::search(int number)
 {
-	ListElem* temp = this->head;
-	while(temp==this->tail)
+	if (this->head)
 	{
-		if (temp->value == number) return true;
-		temp = temp->next;
+		ListElem* temp = this->head;
+		while (temp != nullptr)
+		{
+			if (temp->value == number) return true;
+			temp = temp->next;
+		}
 	}
 	return false;
 }
