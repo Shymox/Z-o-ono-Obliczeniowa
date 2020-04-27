@@ -77,7 +77,6 @@ void List::load(std::string name)
 		}
 	}
 	else std::cout << "Dostep do pliku zostal zabroniony!" << std::endl;
-	system("pause");
 }
 //Dodanie elementu na pocz¹tek listy
 void List::pushFront(int value)
@@ -123,11 +122,11 @@ void List::push(int value, size_t index)
 		{
 			pushFront(value);
 		} 
-	else if (index == size)
+	else if (index == this->size)
 		{
 			pushBack(value);
 		}
-	else if (0 < index < size)
+	else if (0 < index < this->size)
 	{
 		ListElem* temp = this->head;
 		while (index)

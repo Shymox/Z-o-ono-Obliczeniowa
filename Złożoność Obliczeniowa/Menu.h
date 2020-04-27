@@ -15,6 +15,7 @@ private:
 	bool exit = true;
 	const int SIZEX = 3;
 	const int SIZEY = 5;
+
 	std::string nazwa(int page);
 	Array* array;
 	List* list;

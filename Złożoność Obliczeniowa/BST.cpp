@@ -89,7 +89,6 @@ void BST::load(std::string name)
 		}
 	}
 	else std::cout << "Dostep do pliku zostal zabroniony!" << std::endl;
-	system("pause");
 }
 
 void BST::random(int size)

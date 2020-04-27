@@ -4,7 +4,7 @@
 class BinaryHeap
 {
 private:
-	const size_t SIZEMAX = 20000;
+	const size_t SIZEMAX = 65000;
 
 	size_t size;
 

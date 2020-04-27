@@ -23,7 +23,7 @@ size_t BinaryHeap::childRightIndex(int index)
 //funkcja pobiera kopiec z pliku
 void BinaryHeap::load(std::string name)
 {
-
+	this->size = 0;
 	std::fstream file;
 	file.open(name, std::ios::in | std::ios::out);
 	if (file.good() == true)
@@ -60,11 +60,11 @@ void BinaryHeap::load(std::string name)
 		}
 	}
 	else std::cout << "Dostep do pliku zostal zabroniony!" << std::endl;
-	system("pause");
 }
 //funkcja tworzy kopiec o podanej wielkosci z losowymi wartosciami
 void BinaryHeap::random(int size)
 {
+	this->size = 0;
 	for (int i = 0;i < size;i++)
 	{
 		push(rand());
@@ -128,6 +128,7 @@ void BinaryHeap::pop(int number)
 		{
 			break;
 		}
+		return;
 	}
 	this->tab[index] = this->tab[this->size - 1];
 	this->size--;
