@@ -169,6 +169,7 @@ void Menu::input()
 				this->array->load(name);
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->array->display();
 				system("pause");
 
 			}
@@ -180,6 +181,7 @@ void Menu::input()
 				this->array->popNumber(i);
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->array->display();
 				system("pause");
 				break;
 			case 2:
@@ -192,6 +194,7 @@ void Menu::input()
 				this->array->push(i, j);
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->array->display();
 				system("pause");
 				break;
 			case 3:
@@ -202,6 +205,7 @@ void Menu::input()
 				else std::cout << "Nie znaleziono ";
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				//this->array->display();
 				system("pause");
 				break;
 			case 4:
@@ -211,6 +215,7 @@ void Menu::input()
 				this->array->random(i);
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->array->display();
 				system("pause");
 				break;
 			case 5:
@@ -231,6 +236,7 @@ void Menu::input()
 				this->list->load(name);
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->list->display();
 				system("pause");
 			}
 			break;
@@ -241,6 +247,7 @@ void Menu::input()
 				this->list->popNumber(i);
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->list->display();
 				system("pause");
 				break;
 			case 2:
@@ -254,6 +261,7 @@ void Menu::input()
 				this->list->push(i, j);
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->list->display();
 				system("pause");
 			}
 			break;
@@ -265,6 +273,7 @@ void Menu::input()
 				else std::cout << "Nie znaleziono ";
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				//this->list->display();
 				system("pause");
 				break;
 			case 4:
@@ -274,6 +283,7 @@ void Menu::input()
 				this->list->random(i);
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->list->display();
 				system("pause");
 				break;
 			case 5:
@@ -294,6 +304,7 @@ void Menu::input()
 				this->heap->load(name);
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->heap->display("", "", 0);
 				system("pause");
 			}
 			break;
@@ -304,6 +315,7 @@ void Menu::input()
 				this->heap->pop(i);
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->heap->display("", "", 0);
 				system("pause");
 				break;
 			case 2:
@@ -315,6 +327,7 @@ void Menu::input()
 				this->heap->push(i);
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->heap->display("", "", 0);
 				system("pause");
 			}
 			break;
@@ -326,6 +339,7 @@ void Menu::input()
 				else std::cout << "Nie znaleziono";
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				//this->heap->display("", "", 0);
 				system("pause");
 				break;
 			case 4:
@@ -335,6 +349,7 @@ void Menu::input()
 				this->heap->random(i);
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->heap->display("", "", 0);
 				system("pause");
 				break;
 			case 5:
@@ -355,6 +370,7 @@ void Menu::input()
 				this->tree->load(name);
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->tree->display("", "", this->tree->returnRoot());
 				system("pause");
 			}
 			break;
@@ -365,6 +381,7 @@ void Menu::input()
 				this->tree->pop(this->tree->findNode(i));
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->tree->display("", "", this->tree->returnRoot());
 				system("pause");
 				break;
 			case 2:
@@ -376,6 +393,7 @@ void Menu::input()
 				this->tree->push(i);
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->tree->display("", "", this->tree->returnRoot());
 				system("pause");
 			}
 			break;
@@ -387,6 +405,7 @@ void Menu::input()
 				else std::cout << "Nie znaleziono";
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				//this->tree->display("", "", this->tree->returnRoot());
 				system("pause");
 				break;
 			case 4:
@@ -396,6 +415,7 @@ void Menu::input()
 				this->tree->random(i);
 				this->time = this->timer->getCounter();
 				writeTime(this->time);
+				this->tree->display("", "", this->tree->returnRoot());
 				system("pause");
 				break;
 			case 5:
